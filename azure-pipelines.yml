@@ -14,6 +14,13 @@ jobs:
 
 # All tasks on Windows
 - job: build_all_windows
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Azure for Students(901b1a7b-ab5c-4684-ac44-ac3ae2848332)'
+    appType: 'webApp'
+    WebAppName: 'AzureDevops'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
   displayName: Build all tasks (Windows)
   condition: and(succeeded(), not(variables.task), eq(variables.os, 'Windows_NT'))
   pool:
