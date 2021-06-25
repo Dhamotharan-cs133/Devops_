@@ -3,31 +3,14 @@ trigger:
 - releases/*
 - node6hotfixes/*
 
-resources:
-  repositories:
-  - repository: - task: AzureRmWebAppDeployment@4
-  inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'Azure for Students(1)(901b1a7b-ab5c-4684-ac44-ac3ae2848332)'
-    appType: 'webApp'
-    WebAppName: 'AzureDevOps'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
-    enableCustomDeployment: true
-    DeploymentType: 'runFromZip'
-    type: git
-    endpoint: AzureDevOps
-    name: AzureDevOps/AzureDevOps
+
+  
 
 jobs:
 
 # All tasks on Windows
 - job: build_all_windows
-- task: AzureRmWebAppDeployment@4
-  inputs:
-    ConnectionType: 'PublishProfile'
-    PublishProfilePath: '$(System.DefaultWorkingDirectory)/**/*.pubxml'
-    PublishProfilePassword: 'Dhamo@133'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+- 
 
 # Publish on Windows
 - job: publish_windows
