@@ -14,22 +14,7 @@ jobs:
 
 # All tasks on Windows
 - job: build_all_windows
-- Task AzureRmWebAppDeployment@4
-  Input:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'Azure for Students(901b1a7b-ab5c-4684-ac44-ac3ae2848332)'
-    appType: 'webApp'
-    WebAppName: 'AzureDevops'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
-  displayName: Build all tasks (Windows)
-  condition: and(succeeded(), not(variables.task), eq(variables.os, 'Windows_NT'))
-  pool:
-    vmImage: vs2017-win2016
-  timeoutInMinutes: 90
-  steps:
-  - template: ci/build-all-steps.yml
-    parameters:
-      os: Windows_NT
+
 
 # Publish on Windows
 - job: publish_windows
