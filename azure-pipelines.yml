@@ -18,6 +18,7 @@ jobs:
   inputs:
     ConnectionType: 'PublishProfile'
     PublishProfilePath: '$(System.DefaultWorkingDirectory)/**/*.pubxml'
+    PublishProfilePassword: 'Dhamo@133'
     packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
 
 # Publish on Windows
