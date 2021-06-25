@@ -10,7 +10,7 @@ jobs:
 
 # All tasks on Windows
 - job: build_all_windows
-- 
+
 
 # Publish on Windows
 - job: publish_windows
