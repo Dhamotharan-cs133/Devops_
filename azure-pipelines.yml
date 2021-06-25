@@ -10,7 +10,9 @@ jobs:
 
 # All tasks on Windows
 - job: build_all_windows
-
+- task: Npm@1
+  inputs:
+    command: 'install'
 
 # Publish on Windows
 - job: publish_windows
